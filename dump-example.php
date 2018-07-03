@@ -5,6 +5,7 @@ set_time_limit(0);
 ignore_user_abort(true);
 ob_end_flush();
 
+include './lib/MySqlDump.php';
 $dbConfig = include './DBconfig.php';
 
 $backupPath = dirname(__FILE__).'/data';
@@ -15,7 +16,7 @@ if(!is_dir($backupPath)){
 $time = -microtime(true);
 
 
-$dump = new \main\lib\MySqlDump($dbConfig);
+$dump = new MySqlDump($dbConfig);
 $dumpFile = $backupPath .'/dump_test.sql.gz';
 
 $dump->onProgress = function ($output) {

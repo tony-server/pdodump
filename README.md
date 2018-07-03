@@ -7,5 +7,5 @@
 
 ### Example
 
-- 备份 php dump-example.php
-- 恢复 php import-example.php
+- 备份 curl http://localhost/pdodump/dump-example.php
+- 恢复 curl http://localhost/pdodump/import-example.php
